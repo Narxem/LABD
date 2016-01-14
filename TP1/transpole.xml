@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trajet>
+	<modalite>
+		<preference>Arriver le plus rapidement</preference>
+		<mode>Metro-bus-tram-car</mode>
+		<vitesseMarcheAPied>Normale</vitesseMarcheAPied>
+		<depart>Seclin - Centre hospitalier</depart>
+		<arrivee>Roubaix - Avenue Motte</arrivee>
+		<date>mardi 22 janvier à 12h35</date>
+		<temps>1h27</temps>
+	</modalite>	
+
+	<etapes>
+		<etape>
+	</etapes>
+
+</trajet>
