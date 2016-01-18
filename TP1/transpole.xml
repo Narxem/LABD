@@ -7,11 +7,55 @@
 		<depart>Seclin - Centre hospitalier</depart>
 		<arrivee>Roubaix - Avenue Motte</arrivee>
 		<date>mardi 22 janvier à 12h35</date>
-		<temps>1h27</temps>
+		<temps>1h27min</temps>
 	</modalite>	
 
 	<etapes>
 		<etape>
+			<depart>Seclin - Centre hospitalier</depart>
+			<arrivee>Seclin - Hôtel de ville</arrivee>
+			<mode>Marche à pied</mode>
+			<duree>13min</duree>
+		</etape>
+		
+		<etape>
+			<depart heure="14h51">Seclin - Hôtel de ville</depart>
+			<mode>Bus</mode>
+			<ligne>52 vers Lille - Porte des Postes</ligne>
+			<duree>23min</duree>
+			<arrivee heure="15h14">Lille - CHR B Calmette</arrivee>
+		</etape>
+		
+		<correspondance duree="4min"/>
+		
+		<etape>
+			<depart heure="15h18">Lille - CHR B Calmette</depart>
+			<mode>Metro</mode>
+			<ligne>1 vers Villeneuve d'Ascq - 4 Cantons Grand Stade</ligne>
+			<duree>3min</duree>
+			<arrivee heure="15h21">Lille - Porte des Postes</arrivee>
+		</etape>
+		
+		<correspondance duree="6min"/>
+		
+		<etape>
+			<depart heure="15h27">Lille - Porte des Postes</depart>
+			<mode>Metro</mode>
+			<ligne>2 vers Tourcoing - CH Dron</ligne>
+			<duree>25min</duree>
+			<arrivee heure="15h52">Roubaix - Epeule Montesquieu</arrivee>
+		</etape>
+		
+		<correspondance duree="4min"/>
+		
+		<etape>
+			<depart heure="15h56">Roubaix - Epeule Montesquieu</depart>
+			<mode>Bus</mode>
+			<ligne>25 vers Roubaix -fraternité</ligne>
+			<duree>9min</duree>
+			<arrivee heure="16h05">Roubaix - Avenue Motte</arrivee>
+		</etape>
+		
 	</etapes>
 
 </trajet>
