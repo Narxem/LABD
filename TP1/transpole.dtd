@@ -1,5 +1,21 @@
-<!-- DTD created at Thu Jan 14 11:56:22 CET 2016 with EditiX. Please insert an encoding attribute header for converting any DTD  -->
 
-<!ELEMENT  tag (#PCDATA)>
-<!ATTLIST tag  attribute CDATA #REQUIRED>
+<!ELEMENT trajet (modalite, etapes)>
 
+<!ELEMENT modalite (preference, mode, vitesseMarcheAPied, depart, arrivee, date, temps)>
+<!ELEMENT preference (#PCDATA)>
+<!ELEMENT mode (#PCDATA)>
+<!ELEMENT vitesseMarcheAPied (#PCDATA)>
+<!ELEMENT depart (#PCDATA)>
+    <!ATTLIST depart heure CDATA #IMPLIED>
+<!ELEMENT arrivee (#PCDATA)>
+    <!ATTLIST arrivee heure CDATA #IMPLIED>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT temps (#PCDATA)>
+
+<!ELEMENT etapes (etape, correspondance?)*>
+<!ELEMENT etape (depart, mode, ligne?, duree, arrivee)>
+<!ELEMENT ligne (#PCDATA)>
+<!ELEMENT duree (#PCDATA)>
+
+<!ELEMENT correspondance EMPTY>
+    <!ATTLIST correspondance duree CDATA #REQUIRED>

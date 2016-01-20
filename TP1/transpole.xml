@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE trajet SYSTEM "transpole.dtd">
 <trajet>
 	<modalite>
 		<preference>Arriver le plus rapidement</preference>
@@ -13,9 +14,9 @@
 	<etapes>
 		<etape>
 			<depart>Seclin - Centre hospitalier</depart>
-			<arrivee>Seclin - Hôtel de ville</arrivee>
 			<mode>Marche à pied</mode>
 			<duree>13min</duree>
+                        <arrivee>Seclin - Hôtel de ville</arrivee>
 		</etape>
 		
 		<etape>
