@@ -49,3 +49,24 @@ exemple :
 2. `/descendant::legume[origine='Espagne']`
 3. `/descendant::fruit[bio and @type="clementine" and @calibre="1"]`
 4. `/descendant::*/origine[@region="Bretagne"]/../producteur`
+
+
+### Exercice 3
+
+
+           recette1                                                          |   recette2
+    1   //recette/titre                                                      |   //recette/titre
+    2   //ingredient/nom_ing                                                 |   //ingredient[@nom]
+    3   //recette[2]/titre                                                   |   //recette[2]/titre
+    4   //recette/texte/etape[last()]                                        |   //recette/texte/etape[last()]
+    5   count(//recette)                                                     |   count(//recette)
+    6   //recette/ingredients[count(ingredient) < 7]/..                      |   //recette/ingredients[count(ing-recette) < 7]/..
+    7   //recette/ingredients[count(ingredient) < 7]/../titre                |   //recette/ingredients[count(ing-recette) < 7]/../titre
+    8   //recette/descendant::ingredient[contains(nom_ing, "farine")]/../..  |
+    
+    
+    
+    
+    
+    
+    
