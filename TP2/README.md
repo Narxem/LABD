@@ -54,19 +54,24 @@ exemple :
 ### Exercice 3
 
 
-           recette1                                                          |   recette2
-    1   //recette/titre                                                      |   //recette/titre
-    2   //ingredient/nom_ing                                                 |   //ingredient[@nom]
-    3   //recette[2]/titre                                                   |   //recette[2]/titre
-    4   //recette/texte/etape[last()]                                        |   //recette/texte/etape[last()]
-    5   count(//recette)                                                     |   count(//recette)
-    6   //recette/ingredients[count(ingredient) < 7]/..                      |   //recette/ingredients[count(ing-recette) < 7]/..
-    7   //recette/ingredients[count(ingredient) < 7]/../titre                |   //recette/ingredients[count(ing-recette) < 7]/../titre
-    8   //recette/descendant::ingredient[contains(nom_ing, "farine")]/../..  |
+           recette1                                                             |   recette2
+    1   //recette/titre                                                         |   //recette/titre
+    2   //ingredient/nom_ing                                                    |   //ingredient[@nom]
+    3   //recette[2]/titre                                                      |   //recette[2]/titre
+    4   //recette/texte/etape[last()]                                           |   //recette/texte/etape[last()]
+    5   count(//recette)                                                        |   count(//recette)
+    6   //recette/ingredients[count(ingredient) < 7]/..                         |   //recette/ingredients[count(ing-recette) < 7]/..
+    7   //recette/ingredients[count(ingredient) < 7]/../titre                   |   //recette/ingredients[count(ing-recette) < 7]/../titre
+    8   //recette/descendant::ingredient[contains(nom_ing, "farine")]/../..     |   //ing-recette[@ingredient="farine"]/../..
+    9	//categorie[contains(text(), "entrée") or contains(text(),"Entrée")]/.. |   //recette[contains(@categ, "entree")]
+	
+	
+### Exercice 1
     
-    
-    
-    
+    1   count(//key[contains(text(), "Tracks")]/following-sibling::dict/child::*)
+	2   //key[contains(text(), "Album")]/following-sibling::string[position()=1]
+	3   //key[contains(text(), "Genre")]/following-sibling::string[position()=1]
+	4   count(//key[contains(text(), "Genre")]/following-sibling::string[position()=1 and text()="Jazz"])
     
     
     
