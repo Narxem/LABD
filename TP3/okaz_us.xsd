@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+<xs:complexType name="vehicule">
+
+	<xs:sequence>
+
+		<xs:element name="marque" type="xs:normalizedString"></xs:element>
+
+		<xs:element name="modele" type="xs:normalizedString"></xs:element>
+
+	</xs:sequence>
+
+</xs:complexType>
+
+<xs:element name="item">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element type=vehicule></xs:element>
+		</xs:sequence>
+		<xs:attribute  name="prix" type="xs:float"></xs:attribute>
+	</xs:complexType>
+</xs:element>
+
+</xs:schema>
