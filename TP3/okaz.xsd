@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified">
+    
+    <xs:complexType name="vehicule">
+        <xs:sequence>
+            <xs:element name="marque" type="xs:NCName"/>
+            <xs:element name="modele" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="prix" type="xs:nonNegativeInteger"/>
+    </xs:complexType>
+    
+    <xs:complexType name="occasion">
+        <xs:complexContent>
+            <xs:extension base="vehicule">
+                <xs:sequence>
+                    <xs:element name="annee" type="xs:nonNegativeInteger"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>    
+    </xs:complexType>
+    
+    <xs:element name="occases">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item" type="occasion" 
+                    minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="neufs">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item" type="vehicule" 
+                    minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="stock">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="occases"/>
+                <xs:element ref="neufs"/>
+            </xs:sequence>
+            <xs:attribute name="nom" use="required" type="xs:NCName"/>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>
