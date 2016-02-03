@@ -13,15 +13,47 @@
 
 	</xs:sequence>
 
+	<xs:attribute name="prix" type="xs:positiveInteger"></xs:attribute>
 </xs:complexType>
 
-<xs:element name="item">
+
+
+<xs:complexType name="vehiculeOccasion">
+	<xs:complexContent>
+		<xs:extension base="vehicule">
+		<xs:sequence>
+			<xs:element name="annee" type="xs:positiveInteger"></xs:element>
+		</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+
+</xs:complexType>
+
+<xs:element name="occases" >
 	<xs:complexType>
 		<xs:sequence>
-			<xs:element type=vehicule></xs:element>
+			<xs:element name="item" type="vehiculeOccasion" minOccurs="0" maxOccurs="unbounded"></xs:element>
 		</xs:sequence>
-		<xs:attribute  name="prix" type="xs:float"></xs:attribute>
 	</xs:complexType>
 </xs:element>
 
+
+<xs:element name="neufs" >
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="item" type="vehicule" minOccurs="0" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="stock">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="occases"></xs:element>
+			<xs:element ref="neufs"></xs:element>
+		</xs:sequence>
+		
+		<xs:attribute name="nom" use="required" type="xs:normalizedString"></xs:attribute>
+	</xs:complexType>
+</xs:element>
 </xs:schema>
