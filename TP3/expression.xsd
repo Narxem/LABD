@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="cons" type="xs:integer"></xs:element>
+<xs:element name="var" type="xs:NCName"></xs:element>
+
+<xs:element name="op">
+	<xs:complexType>
+		<xs:choice minOccurs="2" maxOccurs="2">
+			<xs:element ref="cons"></xs:element>
+			<xs:element ref="var"></xs:element>
+			<xs:element ref="op"></xs:element>
+		</xs:choice>
+		
+		<xs:attribute name="val">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[*-/+]">
+					</xs:pattern>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		
+	</xs:complexType>
+</xs:element>
+
+
+<xs:element name="expr">
+	<xs:complexType>
+		<xs:choice>
+			<xs:element ref="cons"></xs:element>
+			<xs:element ref="var"></xs:element>
+			<xs:element ref="op"></xs:element>
+		</xs:choice>
+	</xs:complexType>
+</xs:element>
+
+	
+
+
+
+</xs:schema>
