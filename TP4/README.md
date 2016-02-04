@@ -10,4 +10,4 @@ Nabil Maiz
 ### Exo 4 Question 3
 
 	declare namespace pers = "http://www.fil.univ-lille1.fr/labd";
-	//pers:personne[pers:sexe="M"}/pers:naissance/pers:date
+	//pers:personne[pers:sexe="M"]/pers:naissance/pers:date
