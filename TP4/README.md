@@ -11,3 +11,6 @@ Nabil Maiz
 
 	declare namespace pers = "http://www.fil.univ-lille1.fr/labd";
 	//pers:personne[pers:sexe="M"]/pers:naissance/pers:date
+
+### Exo 5
+Le XMLSchema est fonctionnel mais n'est pas suffisamment restrictif car on peut mettre le décès d'un enfant qui n'est pas mineur par exemple..
