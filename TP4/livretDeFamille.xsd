@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+elementFormDefault="qualified"
+targetNamespace="http://www.livret.com"
+xmlns:ie="http://xml.insee.fr/schema"
+xmlns="http://www.livret.com"
+>
+
+
+
+
+<xs:import namespace="http://xml.insee.fr/schema" schemaLocation="individu.xsd"></xs:import>
+
+<xs:import namespace="http://xml.insee.fr/schema" schemaLocation="insee-commun.xsd"></xs:import>
+
+
+
+<xs:element name="pere">
+
+	<xs:complexType>
+
+		<xs:sequence>
+
+			<xs:element name="nom" type="ie:NomDeFamilleSeulType"></xs:element>
+
+			<xs:element name="prenoms" type="ie:PrenomsOfficielsSeulsType"></xs:element>
+
+			<xs:element name="naissance" type="ie:NaissanceType"></xs:element>
+
+		</xs:sequence>
+
+	</xs:complexType>
+
+</xs:element>
+
+
+<xs:element name="mere">
+
+	<xs:complexType>
+
+		<xs:sequence>
+
+			<xs:element name="nom" type="ie:NomDeFamilleSeulType"></xs:element>
+
+			<xs:element name="prenoms" type="ie:PrenomsOfficielsSeulsType"></xs:element>
+
+			<xs:element name="naissance" type="ie:NaissanceType"></xs:element>
+
+		</xs:sequence>
+
+	</xs:complexType>
+
+</xs:element>
+
+<xs:element name="mariage">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="date" type="ie:DateType"></xs:element>
+			<xs:element name="lieu" type="ie:LieuType"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="enfants">
+	<xs:complexType>
+		<xs:sequence minOccurs="0">
+			<xs:element name="enfant" type="ie:NaissanceType"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="decesEnfantsMineurs">
+	<xs:complexType>
+		<xs:sequence minOccurs="0">
+			<xs:element name="enfant" type="ie:DecesType"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="deces">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="decesPere" type="ie:DecesType" minOccurs="0"></xs:element>
+			<xs:element name="decesMere" type="ie:DecesType" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:complexType name="livretDeFamille">
+	<xs:sequence>
+		<xs:element ref="pere"></xs:element>
+		<xs:element ref="mere"></xs:element>
+		<xs:element ref="mariage"></xs:element>
+		<xs:element ref="enfants"></xs:element>
+		<xs:element ref="decesEnfantsMineurs"></xs:element>
+		<xs:element ref="deces"></xs:element>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:element name="livret" type="livretDeFamille"></xs:element>
+</xs:schema>
