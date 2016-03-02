@@ -21,9 +21,16 @@
 					<xsl:for-each select="//rencontre[receveur/text() = $club_id]">
 					<xsl:variable name="id_inv" select="./invite/text()"></xsl:variable>
 					<xsl:variable name="score_inv" select="./score"></xsl:variable>
-						<club><xsl:value-of select="//club[contains(@id,$id_inv)]/nom"/></club>
-						<xsl:copy-of select="$score_inv"/>
+						
+						
+							<xsl:copy>
+								<xsl:copy-of select="./parent/journee/@num"/> 
+								<club><xsl:value-of select="//club[contains(@id,$id_inv)]/nom"/></club>
+								<xsl:copy-of select="$score_inv"/>		
+							 </xsl:copy> 
+
 					</xsl:for-each>
+					
 				</domicile>
 
 				<exterieur>
