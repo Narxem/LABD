@@ -13,4 +13,9 @@ Nabil Maiz
 6. Affiche chaque auteur avec le nombre de livres auxquels ils ont contribué
 7. Le prix moyen des livres pour chaque année (pour laquelle il y a au moins un livre sorti)
 
+## Exercice 2
+
+cf maison.xq
+
+
 
