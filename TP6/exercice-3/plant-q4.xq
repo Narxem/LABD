@@ -6,17 +6,19 @@ declare variable $order := "plant_order.xml";
 
 <PLANTS>
 {
+let $final :=
 for $plant in doc($order)//PLANT
 	let $plant_priced:= 
 	for $plant_cat in doc($catalog)//PLANT
 		where some $COMMON in $plant_cat/COMMON
 		satisfies $COMMON = $plant/COMMON
 		return 
-			xs:double(replace($plant_cat/PRICE,"\$(\d+)","(\d+)")) * $plant/QUANTITY
+			xs:double(replace($plant_cat/PRICE,"\$","")) * $plant/QUANTITY
 	return
-		<PRICE>
-			{sum($plant_priced)}
-		</PRICE>
-
+		sum($plant_priced)
+return 
+	<PRICE>
+		{sum($final)	}
+	</PRICE>
 }
 </PLANTS>
