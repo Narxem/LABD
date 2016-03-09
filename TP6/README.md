@@ -18,4 +18,6 @@ Nabil Maiz
 cf maison.xq
 
 
+## Exercice 3
 
+1 fichier par question dans exercice-3/
