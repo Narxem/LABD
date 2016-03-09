@@ -10,13 +10,13 @@ for $plant in doc($catalog)//PLANT
 	let $plant_family := 
 	for $family in doc($families)//FAMILY
 		where some $SPECIES in $family/SPECIES
-		satisfies $SPECIES = $family/NAME
+		satisfies $SPECIES = $plant/BOTANICAL
 		return 
-			$family/NAME
+			$family
 	return
 		<PLANT>
 		{$plant/*}
-			<FAMILY>{$plant_family}</FAMILY>
+			<FAMILY>{$plant_family/NAME/text()}</FAMILY>
 		</PLANT>
 
 
