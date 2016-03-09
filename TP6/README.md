@@ -3,6 +3,9 @@ Nabil Maiz
 
 # LABD TP6 - Programmer avec XQuery
 
+Taper dans le terminal :
+	`./xquery <nom du fichier.xq>` > <nom_fichier_de_sortie>
+
 ## Exercice 1 
 
 1. Renvoie le titre et l'année des livres publiés par Addison-Wesley après 1991
