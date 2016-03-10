@@ -1,7 +1,7 @@
 xquery version "1.0";
 
-declare option saxon:output "omit-xml-declaration='yes'";
-declare variable $house = "maisons.xml";
+declare option saxon:output "omit-xml-declaration=yes";
+declare variable $house := "maisons.xml";
 
 <html>
 
@@ -11,14 +11,15 @@ declare variable $house = "maisons.xml";
     <tbody>
       {
         for $m in doc($house)//maisons/maison
-            $ch in $m/RDC::child[exists(@surface-m2)]
-            $etag in $m/étage::child[exists(@surface-m2)]
-        let $surf-ch = sum($ch/@surface-m2)
-        let $surf-etag = sum($etag/@surface-m2)
+        let $surf-maison := 
+          for $surf in $m/*/child::node()[exists(@surface-m2)]
+          return 
+            $surf/@surface-m2
+        let $id := $m/@id
         return
             <tr>
-              <td>Maison {$m/@id}</td>
-              <td>{sum($ch,$etag)}</td>
+              <td>Maison {fn:data($id)}</td>
+              <td>{sum($surf-maison)}</td>
             </tr>
 
       }

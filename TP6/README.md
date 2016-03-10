@@ -3,6 +3,9 @@ Nabil Maiz
 
 # LABD TP6 - Programmer avec XQuery
 
+Taper dans le terminal :
+	`./xquery <nom du fichier.xq> > <nom_fichier_de_sortie>` 
+
 ## Exercice 1 
 
 1. Renvoie le titre et l'année des livres publiés par Addison-Wesley après 1991
@@ -13,4 +16,11 @@ Nabil Maiz
 6. Affiche chaque auteur avec le nombre de livres auxquels ils ont contribué
 7. Le prix moyen des livres pour chaque année (pour laquelle il y a au moins un livre sorti)
 
+## Exercice 2
 
+cf maison.xq
+
+
+## Exercice 3
+
+1 fichier par question dans exercice-3/
