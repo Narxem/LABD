@@ -1,13 +1,13 @@
 xquery version "1.0";
 
 module namespace expr="http://lille.org";
-declare default element namespace "http://wwww.expression.org";
+declare default element namespace "http://www.expression.org";
 
 declare function expr:rec_print($expr as node()) as xs:string{
   if($expr/name() eq "op") then
-    concat('(',expr:rec_print($expr/*[1]),expr:rec_print($expr/*[2]),')')
+    concat('(',expr:rec_print($expr/*[1]), ' ', $expr/@val, ' ', expr:rec_print($expr/*[2]),')')
   else
-    concat(data($expr), "1")
+    data($expr)
 };
 
 
