@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<expr xsi:schemaLocation="http://www.expression.org expression.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.expression.org">
+  <op val="-">
+    <op val="-">
+      <op val="+">
+        <op val="*">
+          <op val="+">
+            <op val="+">
+              <cons>-56</cons>
+              <var>D</var>
+            </op>
+            <op val="+">
+              <var>T</var>
+              <cons>43</cons>
+            </op>
+          </op>
+          <op val="*">
+            <var>W</var>
+            <cons>-118</cons>
+          </op>
+        </op>
+        <op val="+">
+          <op val="*">
+            <cons>-65</cons>
+            <cons>-124</cons>
+          </op>
+          <op val="+">
+            <cons>-117</cons>
+            <cons>-124</cons>
+          </op>
+        </op>
+      </op>
+      <op val="*">
+        <op val="+">
+          <var>V</var>
+          <cons>-35</cons>
+        </op>
+        <op val="*">
+          <op val="+">
+            <cons>-17</cons>
+            <var>K</var>
+          </op>
+          <op val="+">
+            <cons>-92</cons>
+            <cons>18</cons>
+          </op>
+        </op>
+      </op>
+    </op>
+    <op val="-">
+      <op val="+">
+        <op val="-">
+          <op val="-">
+            <op val="+">
+              <cons>81</cons>
+              <cons>46</cons>
+            </op>
+            <op val="*">
+              <cons>-124</cons>
+              <cons>29</cons>
+            </op>
+          </op>
+          <op val="*">
+            <op val="+">
+              <cons>-8</cons>
+              <var>X</var>
+            </op>
+            <op val="-">
+              <op val="*">
+                <cons>23</cons>
+                <var>U</var>
+              </op>
+              <op val="+">
+                <cons>113</cons>
+                <cons>65</cons>
+              </op>
+            </op>
+          </op>
+        </op>
+        <op val="*">
+          <op val="+">
+            <cons>-74</cons>
+            <cons>-113</cons>
+          </op>
+          <op val="-">
+            <var>S</var>
+            <var>Y</var>
+          </op>
+        </op>
+      </op>
+      <op val="-">
+        <op val="*">
+          <var>F</var>
+          <cons>87</cons>
+        </op>
+        <op val="+">
+          <cons>-40</cons>
+          <cons>26</cons>
+        </op>
+      </op>
+    </op>
+  </op>
+</expr>
