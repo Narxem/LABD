@@ -8,8 +8,8 @@
 		<const>2</const>
 		<op val="-">
 			<op val="/">
-				<const>6</const>
-				<const>-2</const>
+				<cons>6</cons>
+				<cons>-2</cons>
 			</op>
 			<const>4</const>
 		</op>

@@ -7,5 +7,7 @@ declare variable $expression := "expression.xml";
 declare variable $e1 := "e1.xml";
 declare variable $gen := "gen.xml";
 
+declare variable $var := "variables.xml";
 
-expr:eval($e1)
+
+expr:eval-var($expression, $var)
