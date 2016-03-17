@@ -57,7 +57,6 @@ declare function expr:rec_eval-var($expr as node(), $var as node()) as xs:intege
 	else if ($expr/name() = "cons") then
 		$expr/text()
 	else if ($expr/name() = "var") then
-		(: Recherche de la variable :)
 		if (fn:count($var/*[name() = $expr/text()]) = 1) then
 			$var/*[name() = $expr/text()]/text()
 		else
@@ -69,4 +68,34 @@ declare function expr:rec_eval-var($expr as node(), $var as node()) as xs:intege
 
 declare function expr:eval-var($name as xs:string, $variables as xs:string) as xs:integer {
 	expr:rec_eval-var(doc($name)/expr/*, doc($variables)/*)
+};
+
+(: ########################### SIMPLIFY FUNCTION ########################### :)
+declare function expr:rec_simplify($expr as node(), $var as node()) as element() {
+	if ($expr/name() = "op") then
+		if ($expr/@val = "+") then
+			<op val='+'>{expr:rec_simplify($expr/*[1], $var)} {expr:rec_simplify($expr/*[2], $var)}</op>
+		else if ($expr/@val = "-") then
+			<op val='-'>{expr:rec_simplify($expr/*[1], $var)} {expr:rec_simplify($expr/*[2], $var)}</op>
+		else if ($expr/@val = "*") then
+			<op val='*'>{expr:rec_simplify($expr/*[1], $var)} {expr:rec_simplify($expr/*[2], $var)}</op>
+		else if ($expr/@val = "/") then
+			<op val='/'>{expr:rec_simplify($expr/*[1], $var)} {expr:rec_simplify($expr/*[2], $var)}</op>
+		else
+			fn:error()
+	else if ($expr/name() = "cons") then
+		<cons>{$expr/text()}</cons>
+	else if ($expr/name() = "var") then
+		if (fn:count($var/*[name() = $expr/text()]) = 1) then
+			<cons>{$var/*[name() = $expr/text()]/text()}</cons>
+		else if (fn:count($var/*[name() = $expr/text()]) > 1) then
+			fn:error()
+		else
+			<var>{$expr/text()}</var>
+	else
+		fn:error()
+};
+
+declare function expr:simplify($name as xs:string, $variables as xs:string) as element() {
+	expr:rec_simplify(doc($name)/expr/*, doc($variables)/*)
 };

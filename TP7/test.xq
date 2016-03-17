@@ -10,4 +10,4 @@ declare variable $gen := "gen.xml";
 declare variable $var := "variables.xml";
 
 
-expr:eval-var($expression, $var)
+expr:simplify($expression, $var)
