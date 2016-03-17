@@ -73,16 +73,7 @@ declare function expr:eval-var($name as xs:string, $variables as xs:string) as x
 (: ########################### SIMPLIFY FUNCTION ########################### :)
 declare function expr:rec_simplify($expr as node(), $var as node()) as element() {
 	if ($expr/name() = "op") then
-		if ($expr/@val = "+") then
-			<op val='+'>{expr:rec_simplify($expr/*[1], $var)} {expr:rec_simplify($expr/*[2], $var)}</op>
-		else if ($expr/@val = "-") then
-			<op val='-'>{expr:rec_simplify($expr/*[1], $var)} {expr:rec_simplify($expr/*[2], $var)}</op>
-		else if ($expr/@val = "*") then
-			<op val='*'>{expr:rec_simplify($expr/*[1], $var)} {expr:rec_simplify($expr/*[2], $var)}</op>
-		else if ($expr/@val = "/") then
-			<op val='/'>{expr:rec_simplify($expr/*[1], $var)} {expr:rec_simplify($expr/*[2], $var)}</op>
-		else
-			fn:error()
+		expr:rec_simplify_op($expr/*[1], $expr/*[2], $expr/@val, $var)
 	else if ($expr/name() = "cons") then
 		<cons>{$expr/text()}</cons>
 	else if ($expr/name() = "var") then
@@ -94,6 +85,35 @@ declare function expr:rec_simplify($expr as node(), $var as node()) as element()
 			<var>{$expr/text()}</var>
 	else
 		fn:error()
+};
+
+declare function expr:rec_simplify_op($expr1 as node(), $expr2 as node(), $op as xs:string, $var as node()) {
+	let $res1 := expr:rec_simplify($expr1, $var)
+	let $res2 := expr:rec_simplify($expr2, $var)
+	return
+	if ($res1/name() = "cons" and $res2/name() = "cons") then
+		if ($op = "+") then
+			<cons>{$res1/text() + $res2/text()}</cons>
+		else if ($op = "-") then
+			<cons>{$res1/text() - $res2/text()}</cons>
+		else if ($op = "*") then
+			<cons>{$res1/text() * $res2/text()}</cons>
+		else if ($op = "/") then
+			<cons>{$res1/text() idiv $res2/text()}</cons>
+		else
+			fn:error()
+	else
+		if ($op = "+") then
+			<op val="+">{$res1} {$res2}</op>
+		else if ($op = "-") then
+			<op val ="-">{$res1} {$res2}</op>
+		else if ($op = "*") then
+			<op val="*">{$res1} {$res2}</op>
+		else if ($op = "/") then
+			<op val="/">{$res1} {$res2}</op>
+		else
+			fn:error()
+
 };
 
 declare function expr:simplify($name as xs:string, $variables as xs:string) as element() {
