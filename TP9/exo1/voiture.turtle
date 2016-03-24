@@ -1,0 +1,8 @@
+@base <http://labd/tprdf>.
+@prefix voiture: <http://labd/tprdf#>.
+
+<#c4>
+	voiture:marque	<#citroen>.
+
+<#citroen>
+	voiture:annee-creation "1919".

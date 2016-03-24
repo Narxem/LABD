@@ -1,0 +1,10 @@
+@prefix labd: <http://labd/tprdf#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+labd:Bobby labd:pense 
+[
+	a rdf:Statement;
+	rdf:subject labd:Leon;
+	rdf:predicate labd:etat;
+	rdf:object labd:malade
+].
