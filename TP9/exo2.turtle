@@ -8,3 +8,25 @@ labd:Bobby labd:pense
 	rdf:predicate labd:etat;
 	rdf:object labd:malade
 ].
+
+
+
+
+# Traduction par donnée par http://www.easyrdf.org/converter
+
+# <?xml version="1.0" encoding="utf-8" ?>
+# <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+#          xmlns:ns0="http://labd/tprdf#">
+# 
+#   <rdf:Description rdf:about="http://labd/tprdf#Bobby">
+#     <ns0:pense>
+#       <rdf:Statement>
+#         <rdf:subject rdf:resource="http://labd/tprdf#Leon"/>
+#         <rdf:predicate rdf:resource="http://labd/tprdf#etat"/>
+#         <rdf:object rdf:resource="http://labd/tprdf#malade"/>
+#       </rdf:Statement>
+#     </ns0:pense>
+# 
+#   </rdf:Description>
+# 
+# </rdf:RDF>

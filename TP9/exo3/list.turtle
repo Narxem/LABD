@@ -15,3 +15,41 @@ rdf:list labd:maliste [
 			]
 		]
 	].
+
+
+
+# Traduction donnée par http://www.easyrdf.org/converter
+
+# <?xml version="1.0" encoding="utf-8" ?>
+# <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+#          xmlns:ns0="http://labd/tprdf#">
+# 
+#   <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#list">
+#     <ns0:maliste>
+#       <rdf:Description>
+#         <rdf:first>a</rdf:first>
+#         <rdf:rest>
+#           <rdf:Description>
+#             <rdf:first>b</rdf:first>
+#             <rdf:rest>
+#               <rdf:Description>
+#                 <rdf:first>c</rdf:first>
+#                 <rdf:rest>
+#                   <rdf:Description>
+#                     <rdf:first>d</rdf:first>
+#                     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+#                   </rdf:Description>
+#                 </rdf:rest>
+# 
+#               </rdf:Description>
+#             </rdf:rest>
+# 
+#           </rdf:Description>
+#         </rdf:rest>
+# 
+#       </rdf:Description>
+#     </ns0:maliste>
+# 
+#   </rdf:Description>
+# 
+# </rdf:RDF>
