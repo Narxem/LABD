@@ -25,10 +25,10 @@
 
 <#Deux_equipes>
 	a rdfs:Class;
-	labd:partie labd:equipes (
+	labd:equipes [
 		rdf:_1 <#Equipe>;
 		rdf:_2 <#Equipe>
-	).
+	].
 
 <#Football>
 	a rdfs:Class;
@@ -36,8 +36,11 @@
 	labd:equipeFoot <#Deux_equipes>.
 
 <#Panier>
-	a rdf:Class.
+	a rdfs:Class.
 
+<#But>
+a rdfs:Class.
+ 
 <#Basketball>
 	a rdfs:Class;
 	rdfs:subClassOf <#Sport_collectif>;
