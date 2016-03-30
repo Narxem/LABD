@@ -16,3 +16,13 @@ Les 10 triplets sont :
 8. encadre / range / Stagiaire
 9. encadre / subPropertyOf / foaf:knows
 10. Ali / encadre / Louis
+
+Triplets à déduire
+1. Louis / type / Stagiaire
+2. Louis / type / Personne
+3. Ali / type / Tuteur
+4. Ali / type / Personne
+5. Ali / foaf:knows / Louis
+
+
+
