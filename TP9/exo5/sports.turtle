@@ -1,0 +1,44 @@
+@base <http://labd/tprdf>. 
+@prefix labd: <http://labd/tprdf#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <htpp://www.w3.org/2000/01/rdf-schema#>.
+
+<#Sport>
+	a rdfs:Class.
+
+<#Sport_collectif>
+	a rdfs:Class;
+	rdfs:subClassOf <#Sport>.
+	
+<#Equipe>
+	a rdfs:Class.
+
+<#Sport_individuel>
+	a rdfs:Class;
+	rdfs:subClassOf <#Sport>.
+
+<#Ballon>
+	a rdfs:Class.
+
+<#Stade>
+	a rdfs:Class.
+
+<#Deux_equipes>
+	a rdfs:Class;
+	labd:partie labd:equipes (
+		rdf:_1 <#Equipe>;
+		rdf:_2 <#Equipe>
+	).
+
+<#Football>
+	a rdfs:Class;
+	rdfs:subClassOf <#Sport_collectif>;
+	labd:equipeFoot <#Deux_equipes>.
+
+<#Panier>
+	a rdf:Class.
+
+<#Basketball>
+	a rdfs:Class;
+	rdfs:subClassOf <#Sport_collectif>;
+	labd:equipeBasket <#Deux_equipes>.
