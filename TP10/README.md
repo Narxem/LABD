@@ -214,6 +214,8 @@ SELECT ?x  WHERE
 }
 ```
 
+0 réponse
+
 ```SPARQL
 PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs#>
 
@@ -222,6 +224,8 @@ SELECT ?x  WHERE
  ?x ?y humans:Person
 }
 ```
+
+7 réponses
 
 1.2) Cette fois-ci on obtient plus de résultat car il y a une inférence de type (avec le fichier rdfs, par exemple le fait que "Male" soit un "Animal"...).
 
