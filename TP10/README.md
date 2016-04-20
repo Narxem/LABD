@@ -243,6 +243,15 @@ SELECT ?x ?t WHERE
 }
 ```
 
+PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs#>
+
+SELECT ?x  WHERE
+{
+
+ ?x ?y humans:Person
+ ?x ?y humans:Male
+
+}
 
 Q4) C'est à cause de l'inférence de type (par exemple John possède la propriété hasParent qui est une sous propriété de hasAncestor et c'est de la même manière que les autres résutats sont inférés).
 
