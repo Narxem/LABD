@@ -151,13 +151,14 @@ SELECT ?t ?l ?p WHERE
 
 3)
 ```SPARQL
-PREFIX foaf:<http://xmlns.com/foaf/0.1/>
-PREFIX james:<http://bond007.org/RDF/mes_donnees.rdf#>
-SELECT ?t ?p WHERE
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX james: <http://bond007.org/RDF/mes_donnees.rdf#>
+
+SELECT ?n WHERE
 {
- ?x foaf:knows ?t
- FILTER (?x = james:me)
-OPTIONAL {?t foaf:knows ?p}
+    james:me foaf:knows+ ?p
+    ?p foaf:name ?n
+    FILTER (?p != james:me)
 }
 ```
 
@@ -175,5 +176,11 @@ SELECT ?t ?p WHERE
 
 5)
 ```SPARQL
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX james: <http://bond007.org/RDF/mes_donnees.rdf#>
 
+SELECT ?p (count(?f) as ?nb) WHERE
+{
+?p foaf:knows ?f
+} GROUP BY ?p
 ```
