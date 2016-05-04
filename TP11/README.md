@@ -14,7 +14,7 @@ SELECT ?x ?t WHERE
 ```
 
 2)
-`̀``SPARQL
+```SPARQL
 PREFIX schem: <http://www.labd.org/2015/sport/schema#>
 SELECT ?x WHERE
 {
@@ -55,7 +55,7 @@ SELECT ?x ?t WHERE
 ```
 
 6)
-`̀̀ ̀ SPARQL
+``` SPARQL
 PREFIX schem: <http://www.labd.org/2015/sport/schema#>
 SELECT ?x ?y WHERE
 {
@@ -122,5 +122,58 @@ SELECT ?x ?t  WHERE
 }
 ```
 
+## Exercice 2 : My names is Bond, James Bond
 
+1) 
+```SPARQL
+PREFIX foaf:<http://xmlns.com/foaf/0.1/>
+PREFIX james:<http://bond007.org/RDF/mes_donnees.rdf#>
+SELECT ?t ?l WHERE
+{
+ ?x foaf:knows ?t
+ FILTER (?x = james:me)
+ OPTIONAL {?t foaf:homepage ?l}
+}
+```
 
+2)
+```SPARQL
+PREFIX foaf:<http://xmlns.com/foaf/0.1/>
+PREFIX james:<http://bond007.org/RDF/mes_donnees.rdf#>
+SELECT ?t ?l ?p WHERE
+{
+ ?x foaf:knows ?t
+ FILTER (?x = james:me)
+ OPTIONAL{?t foaf:homepage ?l }
+ OPTIONAL{?t foaf:workplaceHomepage ?p}
+}
+```
+
+3)
+```SPARQL
+PREFIX foaf:<http://xmlns.com/foaf/0.1/>
+PREFIX james:<http://bond007.org/RDF/mes_donnees.rdf#>
+SELECT ?t ?p WHERE
+{
+ ?x foaf:knows ?t
+ FILTER (?x = james:me)
+OPTIONAL {?t foaf:knows ?p}
+}
+```
+
+4)
+```SPARQL
+PREFIX foaf:<http://xmlns.com/foaf/0.1/>
+PREFIX james:<http://bond007.org/RDF/mes_donnees.rdf#>
+SELECT ?t ?p WHERE
+{
+ ?x foaf:knows ?t
+ FILTER (?x = james:me)
+ FILTER NOT EXISTS{?t foaf:phone ?p}
+}
+```
+
+5)
+```SPARQL
+
+```
